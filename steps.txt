@@ -1,0 +1,12 @@
+
+python -m venv .venv  
+.venv\Scripts\activate 
+pip install -r .\harit_model_api\harit_model-2-py3-none-any.whl(for local in docker not needed)
+pip install -r .\harit_model_api\requirements.txt (comment .whl while installing in local )
+
+chainlit run  .\harit_model_api\app\main.py (go to .\harit_model_api then run cmd)
+
+ docker build . -t test1 (go to .\harit_model_api then run cmd)
+ docker run -it -p 8000:8000 --name=test_ test1
+
+http://localhost:8000/
